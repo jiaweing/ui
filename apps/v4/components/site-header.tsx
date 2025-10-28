@@ -33,7 +33,7 @@ export function SiteHeader() {
           <MobileNav
             tree={pageTree}
             items={siteConfig.navItems}
-            className="flex lg:hidden"
+            className="z-1 flex lg:hidden"
           />
           <Button asChild variant="ghost" className="z-1 hidden h-8 lg:flex">
             <Link href="/">
