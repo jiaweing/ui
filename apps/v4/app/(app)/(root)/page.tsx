@@ -16,9 +16,9 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { RootComponents } from "./components"
 
-const title = "The Foundation for your Design System"
+const title = "iOS 26 Design System"
 const description =
-  "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code."
+  "Everyone's talking about liquid glass but nobody's looking at the Apple 26 UI. Until now."
 
 export const dynamic = "force-static"
 export const revalidate = false

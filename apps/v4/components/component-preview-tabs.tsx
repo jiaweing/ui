@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 
@@ -19,6 +20,26 @@ export function ComponentPreviewTabs({
   component: React.ReactNode
   source: React.ReactNode
 }) {
+  const { theme, systemTheme } = useTheme()
+
+  const lightBackgrounds = [
+    "26-Tahoe-Beach-Dawn.png",
+    "26-Tahoe-Beach-Day.png",
+    "26-Tahoe-Light-6K.png"
+  ]
+
+  const darkBackgrounds = [
+    "26-Tahoe-Beach-Dusk.png",
+    "26-Tahoe-Beach-Night.png",
+    "26-Tahoe-Dark-6K.png"
+  ]
+
+  const isDarkMode = theme === "dark" || (theme === "system" && systemTheme === "dark")
+
+  const randomBackground = React.useMemo(() => {
+    const backgroundsToUse = isDarkMode ? darkBackgrounds : lightBackgrounds
+    return backgroundsToUse[Math.floor(Math.random() * backgroundsToUse.length)]
+  }, [isDarkMode])
   return (
     <div
       className={cn(
@@ -27,13 +48,16 @@ export function ComponentPreviewTabs({
       )}
       {...props}
     >
-      <div data-slot="preview">
+      <div data-slot="preview" className="overflow-hidden rounded-t-lg">
         <div
           data-align={align}
           className={cn(
-            "preview flex w-full justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+            "preview flex w-full justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start bg-cover bg-center bg-no-repeat",
             chromeLessOnMobile ? "sm:p-10" : "h-[450px] p-10"
           )}
+          style={{
+            backgroundImage: `url(/backgrounds/${randomBackground})`
+          }}
         >
           {component}
         </div>

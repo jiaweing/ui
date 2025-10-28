@@ -19,10 +19,10 @@ export default function AlertDialogDemo() {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>Save this message as a draft?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            This message has not been sent and contains unsaved changes. You can
+            save it as a draft to work on later.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

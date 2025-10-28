@@ -1,19 +1,27 @@
 import { siteConfig } from "@/lib/config"
+import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 
 export function SiteFooter() {
   return (
-    <footer className="group-has-[.section-soft]/body:bg-surface/40 3xl:fixed:bg-transparent group-has-[.docs-nav]/body:pb-20 group-has-[.docs-nav]/body:sm:pb-0 dark:bg-transparent">
+    <footer className="group-has-[.section-soft]/body:bg-surface/0 3xl:fixed:bg-transparent group-has-[.docs-nav]/body:pb-20 group-has-[.docs-nav]/body:sm:pb-0 dark:bg-transparent">
+      <ProgressiveBlur
+        position="bottom"
+        height="150px"
+        className="z-0"
+        blurAmount="8px"
+        useThemeBackground
+      />
       <div className="container-wrapper px-4 xl:px-6">
         <div className="flex h-(--footer-height) items-center justify-between">
-          <div className="text-muted-foreground w-full px-1 text-center text-xs leading-loose sm:text-sm">
-            Built by{" "}
+          <div className="text-foreground z-1 w-full px-1 text-center text-xs leading-loose sm:text-sm">
+            Built on top of{" "}
             <a
               href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              shadcn
+              shadcn/ui
             </a>{" "}
             at{" "}
             <a

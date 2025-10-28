@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react"
 import { useTheme } from "next-themes"
+import * as React from "react"
 
 import { useMetaColor } from "@/hooks/use-meta-color"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -22,7 +22,7 @@ export function ModeSwitcher() {
     <Button
       variant="ghost"
       size="icon"
-      className="group/toggle extend-touch-target size-8"
+      className="group/toggle extend-touch-target z-1 size-8"
       onClick={toggleTheme}
       title="Toggle theme"
     >
