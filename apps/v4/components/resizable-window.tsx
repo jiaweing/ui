@@ -23,8 +23,8 @@ export function ResizableWindow({
 }: ResizableWindowProps) {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const [dimensions, setDimensions] = useState({
-    width: 1200,
-    height: 800,
+    width: 1400,
+    height: 900,
   })
 
   useEffect(() => {
@@ -57,6 +57,8 @@ export function ResizableWindow({
       const startY = e.clientY
       const startWidth = dimensions.width
       const startHeight = dimensions.height
+      const startPosX = position.x
+      const startPosY = position.y
 
       setIsResizing(true)
 
@@ -66,33 +68,40 @@ export function ResizableWindow({
 
         let newWidth = startWidth
         let newHeight = startHeight
+        let newX = startPosX
+        let newY = startPosY
 
         if (direction.includes("right")) {
           newWidth = Math.max(
             minWidth,
             Math.min(effectiveMaxWidth, startWidth + deltaX)
           )
+          // Right edge: position doesn't change, only width
         }
         if (direction.includes("left")) {
-          newWidth = Math.max(
-            minWidth,
-            Math.min(effectiveMaxWidth, startWidth - deltaX)
-          )
+          const proposedWidth = startWidth - deltaX
+          if (proposedWidth >= minWidth && proposedWidth <= effectiveMaxWidth) {
+            newWidth = proposedWidth
+            newX = startPosX + deltaX // Left edge: both width and position change
+          }
         }
         if (direction.includes("bottom")) {
           newHeight = Math.max(
             minHeight,
             Math.min(effectiveMaxHeight, startHeight + deltaY)
           )
+          // Bottom edge: position doesn't change, only height
         }
         if (direction.includes("top")) {
-          newHeight = Math.max(
-            minHeight,
-            Math.min(effectiveMaxHeight, startHeight - deltaY)
-          )
+          const proposedHeight = startHeight - deltaY
+          if (proposedHeight >= minHeight && proposedHeight <= effectiveMaxHeight) {
+            newHeight = proposedHeight
+            newY = startPosY + deltaY // Top edge: both height and position change
+          }
         }
 
         setDimensions({ width: newWidth, height: newHeight })
+        setPosition({ x: newX, y: newY })
       }
 
       const handleMouseUp = () => {
@@ -166,8 +175,10 @@ export function ResizableWindow({
       }}
     >
       {/* Content flows under title bar - full height */}
-      <div className="absolute inset-0 overflow-auto rounded-3xl">
-        {children}
+      <div className="absolute inset-0 overflow-hidden rounded-3xl">
+        <div className="h-full w-full overflow-auto pr-2">
+          {children}
+        </div>
       </div>
 
       {/* Progressive blur overlay at top */}
