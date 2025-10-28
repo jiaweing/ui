@@ -51,7 +51,7 @@ export function DocsSidebar({
 
   return (
     <Sidebar
-      className="bg-muted sticky top-2 z-30 mb-2 hidden h-[calc(100svh-var(--footer-height)+2rem)] rounded-3xl lg:flex"
+      className="bg-muted sticky top-2 z-30 mb-2 hidden h-[calc(100svh-var(--footer-height)+2rem)] rounded-3xl border lg:flex"
       collapsible="none"
       {...props}
     >
