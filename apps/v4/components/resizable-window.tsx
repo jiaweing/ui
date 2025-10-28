@@ -7,6 +7,7 @@ import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 interface ResizableWindowProps {
   children: React.ReactNode
   className?: string
+  title?: string
   minWidth?: number
   minHeight?: number
   maxWidth?: number
@@ -16,6 +17,7 @@ interface ResizableWindowProps {
 export function ResizableWindow({
   children,
   className,
+  title = "",
   minWidth = 1400,
   minHeight = 900,
   maxWidth,
@@ -253,8 +255,15 @@ export function ResizableWindow({
             <div className="h-3 w-3 rounded-full bg-green-500 shadow-lg transition-colors hover:bg-green-600"></div>
           </div>
         </div>
-        <span className="text-foreground text-center text-sm font-medium drop-shadow-lg">
-          jiaweing/ui
+        <span className="text-foreground pr-20 text-center text-sm font-medium drop-shadow-lg">
+          {title.split(" › ").map((segment, index, array) => (
+            <span key={index}>
+              {segment}
+              {index < array.length - 1 && (
+                <span className="text-foreground mx-3">›</span>
+              )}
+            </span>
+          ))}
         </span>
         <div className="text-xs text-white/70 drop-shadow-lg">
           {/* {dimensions.width} × {dimensions.height} */}

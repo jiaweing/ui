@@ -16,7 +16,7 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { RootComponents } from "./components"
 
-const title = "iOS 26 Design System"
+const title = "Apple Inspired Design System"
 const description =
   "Everyone's talking about liquid glass but nobody's looking at the Apple 26 UI. Until now."
 

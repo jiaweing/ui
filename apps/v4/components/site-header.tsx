@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { CommandMenu } from "@/components/command-menu"
 import { Icons } from "@/components/icons"
+import { LiveDateTime } from "@/components/live-date-time"
 import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ModeSwitcher } from "@/components/mode-switcher"
@@ -56,6 +57,7 @@ export function SiteHeader() {
             <SiteConfig className="3xl:flex z-1 hidden" />
             {/* <Separator orientation="vertical" /> */}
             <ModeSwitcher />
+            <LiveDateTime />
           </div>
         </div>
       </div>
