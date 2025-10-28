@@ -1,21 +1,21 @@
 "use client"
 
-import * as React from "react"
-import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { IconArrowRight } from "@tabler/icons-react"
 import { useDocsSearch } from "fumadocs-core/search/client"
-import { CornerDownLeftIcon, SquareDashedIcon } from "lucide-react"
+import { CornerDownLeftIcon, Search, SquareDashedIcon } from "lucide-react"
+import { useRouter } from "next/navigation"
+import * as React from "react"
 
+import { copyToClipboardWithMeta } from "@/components/copy-button"
+import { useConfig } from "@/hooks/use-config"
+import { useIsMac } from "@/hooks/use-is-mac"
+import { useMutationObserver } from "@/hooks/use-mutation-observer"
 import { type Color, type ColorPalette } from "@/lib/colors"
 import { trackEvent } from "@/lib/events"
 import { showMcpDocs } from "@/lib/flags"
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
-import { useConfig } from "@/hooks/use-config"
-import { useIsMac } from "@/hooks/use-is-mac"
-import { useMutationObserver } from "@/hooks/use-mutation-observer"
-import { copyToClipboardWithMeta } from "@/components/copy-button"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
@@ -33,7 +33,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/new-york-v4/ui/dialog"
-import { Kbd, KbdGroup } from "@/registry/new-york-v4/ui/kbd"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 
@@ -195,21 +194,26 @@ export function CommandMenu({
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button
-          variant="secondary"
+          variant="ghost"
+          size="icon"
           className={cn(
-            "bg-surface text-foreground dark:bg-card relative h-8 w-full justify-start pl-3 font-medium shadow-none sm:pr-12 md:w-48 lg:w-56 xl:w-64"
+            "text-foreground size-8 bg-transparent font-medium shadow-none dark:bg-transparent"
           )}
           onClick={() => setOpen(true)}
           {...props}
         >
-          <span className="hidden lg:inline-flex">Search documentation...</span>
-          <span className="inline-flex lg:hidden">Search...</span>
-          <div className="absolute top-1.5 right-1.5 hidden gap-1 sm:flex">
+          <span className="hidden lg:inline-flex">
+            <Search />
+          </span>
+          <span className="inline-flex lg:hidden">
+            <Search />
+          </span>
+          {/* <div className="absolute top-1.5 right-1.5 hidden gap-1 sm:flex">
             <KbdGroup>
               <Kbd className="border">{isMac ? "⌘" : "Ctrl"}</Kbd>
               <Kbd className="border">K</Kbd>
             </KbdGroup>
-          </div>
+          </div> */}
         </Button>
       </DialogTrigger>
       <DialogContent

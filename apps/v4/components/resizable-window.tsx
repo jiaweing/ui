@@ -16,15 +16,15 @@ interface ResizableWindowProps {
 export function ResizableWindow({
   children,
   className,
-  minWidth = 400,
-  minHeight = 300,
+  minWidth = 1400,
+  minHeight = 900,
   maxWidth,
   maxHeight,
 }: ResizableWindowProps) {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const [dimensions, setDimensions] = useState({
-    width: 1400,
-    height: 900,
+    width: Math.max(1400, minWidth),
+    height: Math.max(900, minHeight),
   })
 
   useEffect(() => {
@@ -47,6 +47,7 @@ export function ResizableWindow({
   const [isDragging, setIsDragging] = useState(false)
   const [position, setPosition] = useState({ x: 0, y: 0 })
   const windowRef = useRef<HTMLElement>(null)
+  const lastUpdateTime = useRef(0)
 
   const handleMouseDown = useCallback(
     (direction: string) => (e: React.MouseEvent) => {
@@ -71,37 +72,79 @@ export function ResizableWindow({
         let newX = startPosX
         let newY = startPosY
 
+        // Handle horizontal resizing
         if (direction.includes("right")) {
+          // Right edge or corner with right - expand/contract to the right
           newWidth = Math.max(
             minWidth,
             Math.min(effectiveMaxWidth, startWidth + deltaX)
           )
-          // Right edge: position doesn't change, only width
-        }
-        if (direction.includes("left")) {
+          // Explicitly keep X position the same for right edge
+          newX = startPosX
+        } else if (direction.includes("left")) {
+          // Left edge or corner with left - expand/contract to the left
           const proposedWidth = startWidth - deltaX
           if (proposedWidth >= minWidth && proposedWidth <= effectiveMaxWidth) {
             newWidth = proposedWidth
-            newX = startPosX + deltaX // Left edge: both width and position change
+            newX = startPosX + deltaX
+          } else {
+            // If proposed width is out of bounds, clamp it
+            newWidth = Math.max(
+              minWidth,
+              Math.min(effectiveMaxWidth, proposedWidth)
+            )
+            // Adjust position based on clamped width
+            newX = startPosX + (startWidth - newWidth)
           }
         }
+
+        // Handle vertical resizing
         if (direction.includes("bottom")) {
+          // Bottom edge or corner with bottom - expand/contract downward
           newHeight = Math.max(
             minHeight,
             Math.min(effectiveMaxHeight, startHeight + deltaY)
           )
-          // Bottom edge: position doesn't change, only height
-        }
-        if (direction.includes("top")) {
+          // Explicitly keep Y position the same for bottom edge
+          newY = startPosY
+        } else if (direction.includes("top")) {
+          // Top edge or corner with top - expand/contract upward
           const proposedHeight = startHeight - deltaY
-          if (proposedHeight >= minHeight && proposedHeight <= effectiveMaxHeight) {
+          if (
+            proposedHeight >= minHeight &&
+            proposedHeight <= effectiveMaxHeight
+          ) {
             newHeight = proposedHeight
-            newY = startPosY + deltaY // Top edge: both height and position change
+            newY = startPosY + deltaY
+          } else {
+            // If proposed height is out of bounds, clamp it
+            newHeight = Math.max(
+              minHeight,
+              Math.min(effectiveMaxHeight, proposedHeight)
+            )
+            // Adjust position based on clamped height
+            newY = startPosY + (startHeight - newHeight)
           }
         }
 
-        setDimensions({ width: newWidth, height: newHeight })
-        setPosition({ x: newX, y: newY })
+        // Always enforce minimum constraints before updating
+        const finalWidth = Math.max(
+          minWidth,
+          Math.min(effectiveMaxWidth, newWidth)
+        )
+        const finalHeight = Math.max(
+          minHeight,
+          Math.min(effectiveMaxHeight, newHeight)
+        )
+
+        // Throttle updates for performance while maintaining logic
+        const now = Date.now()
+        if (now - lastUpdateTime.current >= 16) {
+          // ~60fps
+          setDimensions({ width: finalWidth, height: finalHeight })
+          setPosition({ x: newX, y: newY })
+          lastUpdateTime.current = now
+        }
       }
 
       const handleMouseUp = () => {
@@ -139,9 +182,12 @@ export function ResizableWindow({
         const deltaX = e.clientX - startX
         const deltaY = e.clientY - startY
 
-        setPosition({
-          x: startPosX + deltaX,
-          y: startPosY + deltaY,
+        // Use RAF for smoother updates
+        requestAnimationFrame(() => {
+          setPosition({
+            x: startPosX + deltaX,
+            y: startPosY + deltaY,
+          })
         })
       }
 
@@ -161,8 +207,9 @@ export function ResizableWindow({
     <main
       ref={windowRef}
       className={cn(
-        "bg-background relative flex flex-col rounded-3xl shadow-2xl backdrop-blur-3xl transition-all duration-150",
+        "bg-background relative flex flex-col rounded-3xl shadow-2xl backdrop-blur-3xl",
         (isResizing || isDragging) && "select-none",
+        !(isResizing || isDragging) && "transition-all duration-150",
         className
       )}
       style={{
@@ -176,19 +223,19 @@ export function ResizableWindow({
     >
       {/* Content flows under title bar - full height */}
       <div className="absolute inset-0 overflow-hidden rounded-3xl">
-        <div className="h-full w-full overflow-auto pr-2">
-          {children}
-        </div>
+        <div className="h-full w-full overflow-auto pr-2">{children}</div>
       </div>
 
-      {/* Progressive blur overlay at top */}
-      <ProgressiveBlur
-        position="top"
-        height="100px"
-        className="pointer-events-none absolute top-0 right-0 left-0 z-10 rounded-t-3xl"
-        blurAmount="50px"
-        transparent={true}
-      />
+      {/* Progressive blur overlay at top - disabled during interactions for performance */}
+      {!isDragging && !isResizing && (
+        <ProgressiveBlur
+          position="top"
+          height="100px"
+          className="pointer-events-none absolute top-0 right-0 left-0 z-10 rounded-t-3xl"
+          blurAmount="50px"
+          transparent={true}
+        />
+      )}
 
       {/* Title bar floats on top - completely transparent */}
       <div
@@ -205,12 +252,12 @@ export function ResizableWindow({
             <div className="h-3 w-3 rounded-full bg-yellow-500 shadow-lg transition-colors hover:bg-yellow-600"></div>
             <div className="h-3 w-3 rounded-full bg-green-500 shadow-lg transition-colors hover:bg-green-600"></div>
           </div>
-          <span className="text-foreground text-center text-sm font-medium drop-shadow-lg">
-            jiaweing/ui
-          </span>
         </div>
+        <span className="text-foreground text-center text-sm font-medium drop-shadow-lg">
+          jiaweing/ui
+        </span>
         <div className="text-xs text-white/70 drop-shadow-lg">
-          {dimensions.width} × {dimensions.height}
+          {/* {dimensions.width} × {dimensions.height} */}
         </div>
       </div>
 
@@ -256,7 +303,7 @@ export function ResizableWindow({
         <div className="pointer-events-none absolute inset-0 animate-pulse rounded-3xl border-2 border-blue-500" />
       )}
       {isDragging && (
-        <div className="pointer-events-none absolute inset-0 rounded-3xl border-2 border-green-500" />
+        <div className="pointer-events-none absolute inset-0 rounded-3xl border-2 border-blue-500" />
       )}
     </main>
   )
