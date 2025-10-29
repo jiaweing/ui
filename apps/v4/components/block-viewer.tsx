@@ -1,8 +1,5 @@
 "use client"
 
-import * as React from "react"
-import Image from "next/image"
-import Link from "next/link"
 import {
   Check,
   ChevronRight,
@@ -16,16 +13,19 @@ import {
   Tablet,
   Terminal,
 } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import * as React from "react"
 import { ImperativePanelHandle } from "react-resizable-panels"
 import { registryItemFileSchema, registryItemSchema } from "shadcn/schema"
 import { z } from "zod"
 
+import { getIconForLanguageExtension } from "@/components/icons"
+import { OpenInV0Button } from "@/components/open-in-v0-button"
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { trackEvent } from "@/lib/events"
 import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry"
 import { cn } from "@/lib/utils"
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
-import { getIconForLanguageExtension } from "@/components/icons"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Collapsible,
@@ -209,7 +209,9 @@ function BlockViewerToolbar() {
           className="w-fit gap-1 px-2 shadow-none"
           size="sm"
           onClick={() => {
-            copyToClipboard(`npx shadcn@latest add ${item.name}`)
+            copyToClipboard(
+              `npx shadcn@latest add https://ui.jiaweing.com/c/${item.name}"`
+            )
           }}
         >
           {isCopied ? <Check /> : <Terminal />}
