@@ -150,7 +150,7 @@
     @apply bg-selection text-selection-foreground;
   }
   html {
-    @apply scroll-smooth;
+    @apply overscroll-none scroll-smooth;
   }
   body {
     font-synthesis-weight: none;
@@ -160,6 +160,10 @@
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+  }
+
+  [data-slot="layout"] {
+    @apply 3xl:p-2 3xl:fixed:p-0 overscroll-none;
   }
 
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
