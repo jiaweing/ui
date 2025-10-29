@@ -210,7 +210,7 @@ function BlockViewerToolbar() {
           size="sm"
           onClick={() => {
             copyToClipboard(
-              `npx shadcn@latest add https://ui.jiaweing.com/c/${item.name}"`
+              `npx shadcn@latest add https://ui.jiaweing.com/r/styles/new-york-v4/${item.name}"`
             )
           }}
         >
