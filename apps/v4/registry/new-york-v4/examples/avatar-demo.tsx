@@ -9,7 +9,7 @@ export default function AvatarDemo() {
     <div className="flex flex-row flex-wrap items-center gap-12">
       <Avatar>
         <AvatarImage src="https://github.com/jiaweing.png" alt="@j14wei" />
-        <AvatarFallback>CN</AvatarFallback>
+        <AvatarFallback>JW</AvatarFallback>
       </Avatar>
       <Avatar className="rounded-lg">
         <AvatarImage
@@ -21,7 +21,7 @@ export default function AvatarDemo() {
       <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
         <Avatar>
           <AvatarImage src="https://github.com/jiaweing.png" alt="@j14wei" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback>JW</AvatarFallback>
         </Avatar>
         <Avatar>
           <AvatarImage

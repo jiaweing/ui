@@ -392,7 +392,7 @@ export function NotionPromptForm() {
                     <DropdownMenuSubTrigger>
                       <Avatar className="size-4">
                         <AvatarImage src="https://github.com/jiaweing.png" />
-                        <AvatarFallback>CN</AvatarFallback>
+                        <AvatarFallback>JW</AvatarFallback>
                       </Avatar>
                       shadcn
                     </DropdownMenuSubTrigger>

@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "examples/avatar-demo.tsx",
-      "content": "import {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/new-york/ui/avatar\"\n\nexport default function AvatarDemo() {\n  return (\n    <Avatar>\n      <AvatarImage src=\"https://github.com/jiaweing.png\" alt=\"@j14wei\" />\n      <AvatarFallback>CN</AvatarFallback>\n    </Avatar>\n  )\n}\n",
+      "content": "import {\n  Avatar,\n  AvatarFallback,\n  AvatarImage,\n} from \"@/registry/new-york/ui/avatar\"\n\nexport default function AvatarDemo() {\n  return (\n    <Avatar>\n      <AvatarImage src=\"https://github.com/jiaweing.png\" alt=\"@j14wei\" />\n      <AvatarFallback>JW</AvatarFallback>\n    </Avatar>\n  )\n}\n",
       "type": "registry:example",
       "target": ""
     }

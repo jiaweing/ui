@@ -26,7 +26,7 @@ export default function EmptyAvatarGroup() {
                 src="https://github.com/jiaweing.png"
                 alt="@j14wei"
               />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>JW</AvatarFallback>
             </Avatar>
             <Avatar>
               <AvatarImage

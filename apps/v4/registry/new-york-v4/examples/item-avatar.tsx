@@ -48,7 +48,7 @@ export default function ItemAvatar() {
                 src="https://github.com/jiaweing.png"
                 alt="@j14wei"
               />
-              <AvatarFallback>CN</AvatarFallback>
+              <AvatarFallback>JW</AvatarFallback>
             </Avatar>
             <Avatar className="hidden sm:flex">
               <AvatarImage

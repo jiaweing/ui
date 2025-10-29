@@ -204,7 +204,7 @@ function DropdownMenuWithAvatar() {
         >
           <Avatar>
             <AvatarImage src="https://github.com/jiaweing.png" alt="Shadcn" />
-            <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+            <AvatarFallback className="rounded-lg">JW</AvatarFallback>
           </Avatar>
           <div className="grid flex-1 text-left text-sm leading-tight">
             <span className="truncate font-semibold">shadcn</span>
@@ -223,7 +223,7 @@ function DropdownMenuWithAvatar() {
           <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
             <Avatar>
               <AvatarImage src="https://github.com/jiaweing.png" alt="Shadcn" />
-              <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+              <AvatarFallback className="rounded-lg">JW</AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
               <span className="truncate font-semibold">shadcn</span>
