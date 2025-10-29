@@ -11,5 +11,11 @@
   ],
   "files.exclude": {
     "apps/www": true
+  },
+  "yaml.schemas": {
+    "file:///c%3A/Users/jiawei/.vscode/extensions/continue.continue-1.2.10-win32-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ],
+    "https://www.artillery.io/schema.json": []
   }
 }
