@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -13,7 +12,7 @@ export function MainNav({
 }: React.ComponentProps<"nav"> & {
   items: { href: string; label: string }[]
 }) {
-  const pathname = usePathname()
+  // const pathname = usePathname()
 
   return (
     <nav className={cn("items-center gap-0.5", className)} {...props}>
@@ -21,7 +20,7 @@ export function MainNav({
         <Button key={item.href} variant="ghost" asChild size="sm">
           <Link
             href={item.href}
-            className={cn(pathname === item.href && "text-primary")}
+            // className={cn(pathname === item.href && "text-primary")}
           >
             {item.label}
           </Link>

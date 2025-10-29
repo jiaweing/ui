@@ -95,5 +95,7 @@
   "meta": {
     "iframeHeight": "1000px"
   },
-  "categories": ["dashboard"]
+  "categories": [
+    "dashboard"
+  ]
 }

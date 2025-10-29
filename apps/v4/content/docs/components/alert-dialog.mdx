@@ -73,10 +73,9 @@ import {
   <AlertDialogTrigger>Open</AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogHeader>
-      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogTitle>Save this message as a draft?</AlertDialogTitle>
       <AlertDialogDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
+        This message has not been sent and contains unsaved changes. You can save it as a draft to work on later.
       </AlertDialogDescription>
     </AlertDialogHeader>
     <AlertDialogFooter>
@@ -86,3 +85,46 @@ import {
   </AlertDialogContent>
 </AlertDialog>
 ```
+
+## Examples
+
+### More Buttons
+
+<ComponentPreview
+  name="alert-dialog-advanced-demo"
+  description="An alert dialog with three buttons displayed in a vertical layout."
+  className="mb-4"
+/>
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger asChild>
+    <Button variant="outline">Show Advanced Dialog</Button>
+  </AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Delete this conversation?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This will permanently delete the conversation and all its messages.
+        This action cannot be undone.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction variant="secondary">Archive</AlertDialogAction>
+      <AlertDialogAction variant="destructive">Delete</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```
+
+## API Reference
+
+### AlertDialogAction
+
+The `AlertDialogAction` component is a button component that provides various style variants for alert dialog actions.
+
+| Prop      | Type                                                                          | Default     |
+| --------- | ----------------------------------------------------------------------------- | ----------- |
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"default"` |
+| `asChild` | `boolean`                                                                     | `false`     |

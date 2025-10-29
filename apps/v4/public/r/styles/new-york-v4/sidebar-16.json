@@ -56,5 +56,8 @@
       "type": "registry:component"
     }
   ],
-  "categories": ["sidebar", "dashboard"]
+  "categories": [
+    "sidebar",
+    "dashboard"
+  ]
 }

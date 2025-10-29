@@ -47,10 +47,10 @@
   "@reui": "https://reui.io/r/{name}.json",
   "@rigidui": "https://rigidui.com/r/{name}.json",
   "@scrollxui": "https://www.scrollxui.dev/registry/{name}.json",
-  "@shadcn-editor": "https://shadcn-editor.vercel.app/r/{name}.json",
-  "@shadcn-map": "http://shadcn-map.vercel.app/r/{name}.json",
-  "@shadcn-studio": "https://shadcnstudio.com/r/{name}.json",
-  "@shadcnblocks": "https://shadcnblocks.com/r/{name}.json",
+  "@j14wei-editor": "https://shadcn-editor.vercel.app/r/{name}.json",
+  "@j14wei-map": "http://shadcn-map.vercel.app/r/{name}.json",
+  "@j14wei-studio": "https://shadcnstudio.com/r/{name}.json",
+  "@j14weiblocks": "https://shadcnblocks.com/r/{name}.json",
   "@simple-ai": "https://simple-ai.dev/r/{name}.json",
   "@skiper-ui": "https://skiper-ui.com/registry/{name}.json",
   "@skyr": "https://ui-play.skyroc.me/r/{name}.json",
@@ -64,7 +64,7 @@
   "@wandry-ui": "https://ui.wandry.com.ua/r/{name}.json",
   "@pixelact-ui": "https://www.pixelactui.com/r/{name}.json",
   "@zippystarter": "https://zippystarter.com/r/{name}.json",
-  "@shadcndesign": "https://shadcndesign-free.vercel.app/r/{name}.json",
+  "@j14weidesign": "https://shadcndesign-free.vercel.app/r/{name}.json",
   "@ha-components": "https://hacomponents.keshuac.com/r/{name}.json",
   "@shadix-ui": "https://shadix-ui.vercel.app/r/{name}.json"
 }

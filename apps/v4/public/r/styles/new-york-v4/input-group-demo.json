@@ -2,7 +2,9 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group-demo",
   "type": "registry:example",
-  "registryDependencies": ["input-group"],
+  "registryDependencies": [
+    "input-group"
+  ],
   "files": [
     {
       "path": "registry/new-york-v4/examples/input-group-demo.tsx",
