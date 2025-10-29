@@ -16,6 +16,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/registry/new-york-v4/ui/sidebar"
+import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 
 const TOP_LEVEL_SECTIONS = [
   { name: "Get Started", href: "/docs" },
@@ -51,10 +52,17 @@ export function DocsSidebar({
 
   return (
     <Sidebar
-      className="bg-muted sticky top-2 z-0 mb-2 hidden h-[calc(100svh-var(--footer-height)+2rem)] rounded-3xl border lg:flex"
+      className="bg-muted sticky top-2 z-30 mb-2 hidden h-[calc(100svh-var(--footer-height)+2rem)] rounded-3xl border lg:flex"
       collapsible="none"
       {...props}
     >
+      <ProgressiveBlur
+        position="top"
+        height="100px"
+        className="pointer-events-none absolute top-0 right-0 left-0 z-40 rounded-t-3xl"
+        blurAmount="50px"
+        transparent={true}
+      />
       <SidebarContent className="no-scrollbar overflow-x-hidden px-2 pb-12">
         <div className="h-(--top-spacing) shrink-0" />
         <SidebarGroup>
