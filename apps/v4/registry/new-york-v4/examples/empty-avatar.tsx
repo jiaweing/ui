@@ -1,16 +1,16 @@
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
-  Empty,
-  EmptyContent,
-  EmptyDescription,
-  EmptyHeader,
-  EmptyMedia,
-  EmptyTitle,
+    Empty,
+    EmptyContent,
+    EmptyDescription,
+    EmptyHeader,
+    EmptyMedia,
+    EmptyTitle,
 } from "@/registry/new-york-v4/ui/empty"
 
 export default function EmptyAvatar() {
@@ -20,7 +20,7 @@ export default function EmptyAvatar() {
         <EmptyMedia variant="default">
           <Avatar className="size-12">
             <AvatarImage
-              src="https://github.com/shadcn.png"
+              src="https://github.com/jiaweing.png"
               className="grayscale"
             />
             <AvatarFallback>LR</AvatarFallback>

@@ -1,6 +1,5 @@
 "use client"
 
-import { useMemo, useState } from "react"
 import {
   IconApps,
   IconArrowUp,
@@ -15,6 +14,7 @@ import {
   IconWorld,
   IconX,
 } from "@tabler/icons-react"
+import { useMemo, useState } from "react"
 
 import {
   Avatar,
@@ -117,7 +117,7 @@ const SAMPLE_DATA = {
     {
       type: "user",
       title: "shadcn",
-      image: "https://github.com/shadcn.png",
+      image: "https://github.com/jiaweing.png",
       workspace: "Workspace",
     },
     {
@@ -391,7 +391,7 @@ export function NotionPromptForm() {
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
                       <Avatar className="size-4">
-                        <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarImage src="https://github.com/jiaweing.png" />
                         <AvatarFallback>CN</AvatarFallback>
                       </Avatar>
                       shadcn

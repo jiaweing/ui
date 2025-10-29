@@ -1,7 +1,7 @@
-import * as React from "react"
-import Image from "next/image"
 import { IconChevronRight, IconDownload } from "@tabler/icons-react"
 import { PlusIcon, TicketIcon } from "lucide-react"
+import Image from "next/image"
+import * as React from "react"
 
 import {
   Avatar,
@@ -34,7 +34,7 @@ import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 const people = [
   {
     username: "shadcn",
-    avatar: "https://github.com/shadcn.png",
+    avatar: "https://github.com/jiaweing.png",
     message: "Just shipped a component that fixes itself",
   },
   {
@@ -267,8 +267,8 @@ export function ItemDemo() {
               <div className="*:data-[slot=avatar]:ring-background flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:grayscale">
                 <Avatar>
                   <AvatarImage
-                    src="https://github.com/shadcn.png"
-                    alt="@shadcn"
+                    src="https://github.com/jiaweing.png"
+                    alt="@j14wei"
                   />
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>

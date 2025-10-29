@@ -3,29 +3,29 @@
 import { ChevronDownIcon } from "lucide-react"
 
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
 import {
-  Item,
-  ItemContent,
-  ItemDescription,
-  ItemMedia,
-  ItemTitle,
+    Item,
+    ItemContent,
+    ItemDescription,
+    ItemMedia,
+    ItemTitle,
 } from "@/registry/new-york-v4/ui/item"
 
 const people = [
   {
     username: "shadcn",
-    avatar: "https://github.com/shadcn.png",
+    avatar: "https://github.com/jiaweing.png",
     email: "shadcn@vercel.com",
   },
   {

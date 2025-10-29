@@ -1,8 +1,8 @@
+import { ModeToggle } from "@/app/(examples)/dashboard/components/mode-toggle"
+import { ThemeSelector } from "@/app/(examples)/dashboard/components/theme-selector"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import { SidebarTrigger } from "@/registry/new-york-v4/ui/sidebar"
-import { ModeToggle } from "@/app/(examples)/dashboard/components/mode-toggle"
-import { ThemeSelector } from "@/app/(examples)/dashboard/components/theme-selector"
 
 export function SiteHeader() {
   return (
@@ -17,7 +17,7 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-2">
           <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
             <a
-              href="https://github.com/shadcn-ui/ui/tree/main/apps/v4/app/(examples)/dashboard"
+              href="https://github.com/jiaweing-ui/ui/tree/main/apps/v4/app/(examples)/dashboard"
               rel="noopener noreferrer"
               target="_blank"
               className="dark:text-foreground"

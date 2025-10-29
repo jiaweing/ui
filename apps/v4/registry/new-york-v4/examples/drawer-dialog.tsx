@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
-import { cn } from "@/lib/utils"
 import { useMediaQuery } from "@/hooks/use-media-query"
+import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Dialog,
@@ -82,7 +82,7 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
       </div>
       <div className="grid gap-3">
         <Label htmlFor="username">Username</Label>
-        <Input id="username" defaultValue="@shadcn" />
+        <Input id="username" defaultValue="@j14wei" />
       </div>
       <Button type="submit">Save changes</Button>
     </form>
