@@ -1,6 +1,6 @@
 # jiaweing/ui
 
-A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.
+A set of beautifully designed components inspired by Apple OS 26, built directly on top of shadcn. Easy drop in replacement.
 
 ![hero](apps/v4/public/opengraph-image.png)
 

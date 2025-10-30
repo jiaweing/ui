@@ -12,6 +12,7 @@ import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
 // import blocks from "@/registry/__blocks__.json"
 import { Button } from "@/registry/new-york-v4/ui/button"
+import { GitHubLink } from "./github-link"
 
 export function SiteHeader() {
   const colors = getColors()
@@ -52,7 +53,7 @@ export function SiteHeader() {
               orientation="vertical"
               className="ml-2 hidden lg:block"
             /> */}
-            {/* <GitHubLink /> */}
+            <GitHubLink />
             {/* <Separator orientation="vertical" className="3xl:flex z-1 hidden" /> */}
             <SiteConfig className="3xl:flex z-1 hidden" />
             {/* <Separator orientation="vertical" /> */}

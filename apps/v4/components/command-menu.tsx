@@ -9,16 +9,12 @@ import * as React from "react"
 
 import { copyToClipboardWithMeta } from "@/components/copy-button"
 import { useConfig } from "@/hooks/use-config"
-import { useIsMac } from "@/hooks/use-is-mac"
 import { useMutationObserver } from "@/hooks/use-mutation-observer"
 import { type Color, type ColorPalette } from "@/lib/colors"
 import { trackEvent } from "@/lib/events"
 import { showMcpDocs } from "@/lib/flags"
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
-import { useConfig } from "@/hooks/use-config"
-import { useMutationObserver } from "@/hooks/use-mutation-observer"
-import { copyToClipboardWithMeta } from "@/components/copy-button"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
@@ -197,25 +193,13 @@ export function CommandMenu({
       <DialogTrigger asChild>
         <Button
           variant="ghost"
-          size="icon"
           className={cn(
             "text-foreground size-8 bg-transparent font-medium shadow-none dark:bg-transparent"
           )}
           onClick={() => setOpen(true)}
           {...props}
         >
-          <span className="hidden lg:inline-flex">
             <Search />
-          </span>
-          <span className="inline-flex lg:hidden">
-            <Search />
-          </span>
-          {/* <div className="absolute top-1.5 right-1.5 hidden gap-1 sm:flex">
-            <KbdGroup>
-              <Kbd className="border">⌘</Kbd>
-              <Kbd className="border">K</Kbd>
-            </KbdGroup>
-          </div> */}
         </Button>
       </DialogTrigger>
       <DialogContent
