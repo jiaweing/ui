@@ -235,7 +235,7 @@ export function ResizableWindow({
           height="100px"
           className="pointer-events-none absolute top-0 right-0 left-0 z-10 rounded-t-3xl"
           blurAmount="50px"
-          transparent={true}
+          useThemeBackground
         />
       )}
 
