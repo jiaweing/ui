@@ -62,9 +62,11 @@
   "@tweakcn": "https://tweakcn.com/r/themes/{name}.json",
   "@wds": "https://wds-shadcn-registry.netlify.app/r/{name}.json",
   "@wandry-ui": "https://ui.wandry.com.ua/r/{name}.json",
+  "@wigggle-ui": "https://wigggle-ui.vercel.app/r/{name}.json",
   "@pixelact-ui": "https://www.pixelactui.com/r/{name}.json",
   "@zippystarter": "https://zippystarter.com/r/{name}.json",
   "@shadcndesign": "https://shadcndesign-free.vercel.app/r/{name}.json",
   "@ha-components": "https://hacomponents.keshuac.com/r/{name}.json",
-  "@shadix-ui": "https://shadix-ui.vercel.app/r/{name}.json"
+  "@shadix-ui": "https://shadix-ui.vercel.app/r/{name}.json",
+  "@utilcn": "https://utilcn.dev/r/{name}.json"
 }
