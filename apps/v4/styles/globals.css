@@ -155,16 +155,11 @@
   body {
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
-    background-image: url("/backgrounds/26-Tahoe-Beach-Dawn.png");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
   }
 
-  [data-slot="layout"] {
+  /* [data-slot="layout"] {
     @apply 3xl:p-2 3xl:fixed:p-0 overscroll-none;
-  }
+  } */
 
   @supports (font: -apple-system-body) and (-webkit-appearance: none) {
     [data-wrapper] {

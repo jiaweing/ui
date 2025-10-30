@@ -16,9 +16,9 @@ import { Button } from "@/registry/new-york-v4/ui/button"
 
 import { RootComponents } from "./components"
 
-const title = "Apple Inspired Design System"
+const title = "Inspired by Apple"
 const description =
-  "Everyone's talking about liquid glass but nobody's looking at the Apple 26 UI. Until now."
+  "A set of beautifully designed components inspired by Apple OS 26, built directly on top of shadcn. Easy drop in replacement."
 
 export const dynamic = "force-static"
 export const revalidate = false

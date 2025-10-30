@@ -52,7 +52,7 @@ export function DocsSidebar({
 
   return (
     <Sidebar
-      className="bg-muted sticky top-2 z-30 mb-2 hidden h-[calc(100svh-var(--footer-height)-4rem)] overscroll-none rounded-3xl border lg:flex"
+      className="bg-muted sticky top-2 z-30 hidden h-[calc(100svh-var(--footer-height)-2.2rem)] overscroll-none rounded-3xl border lg:flex"
       collapsible="none"
       {...props}
     >
