@@ -209,7 +209,7 @@ export function ResizableWindow({
     <main
       ref={windowRef}
       className={cn(
-        "bg-background relative flex flex-col rounded-3xl shadow-2xl backdrop-blur-3xl",
+        "bg-background relative flex flex-col rounded-4xl drop-shadow-2xl backdrop-blur-3xl",
         (isResizing || isDragging) && "select-none",
         !(isResizing || isDragging) && "transition-all duration-150",
         className
@@ -224,7 +224,7 @@ export function ResizableWindow({
       }}
     >
       {/* Content flows under title bar - full height */}
-      <div className="absolute inset-0 overflow-hidden rounded-3xl">
+      <div className="absolute inset-0 overflow-hidden rounded-4xl">
         <div className="h-full w-full overflow-auto pr-2">{children}</div>
       </div>
 
@@ -309,10 +309,10 @@ export function ResizableWindow({
 
       {/* Visual feedback when resizing or dragging */}
       {isResizing && (
-        <div className="pointer-events-none absolute inset-0 animate-pulse rounded-3xl border-2 border-blue-500" />
+        <div className="pointer-events-none absolute inset-0 animate-pulse rounded-4xl border-2 border-blue-500" />
       )}
       {isDragging && (
-        <div className="pointer-events-none absolute inset-0 rounded-3xl border-2 border-blue-500" />
+        <div className="pointer-events-none absolute inset-0 rounded-4xl border-2 border-blue-500" />
       )}
     </main>
   )
