@@ -1,7 +1,7 @@
 "use client"
 
+import { Check, ChevronDown } from "lucide-react"
 import * as React from "react"
-import { Check, ChevronsUpDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
@@ -58,7 +58,9 @@ export default function ComboboxDemo() {
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
             : "Select framework..."}
-          <ChevronsUpDown className="opacity-50" />
+          <div className="bg-muted ml-5 rounded-lg p-1">
+            <ChevronDown className="text-muted-foreground" />
+          </div>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
