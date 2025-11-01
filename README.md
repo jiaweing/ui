@@ -21,7 +21,7 @@
   </tr>
 </table>
 
-*Disclaimer: This is not meant to be an exact copy of the Apple UI, but to create something that looks similar. This is a fork of shadcn/ui which will often get merged with upstream commits.*
+*Disclaimer: This is not meant to be an exact copy of the Apple UI, but to create something that looks similar. This is a fork of shadcn/ui which will often sync with upstream commits.*
 
 
 ## Documentation
