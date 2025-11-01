@@ -68,7 +68,7 @@ export function AppleStyleDock() {
   const router = useRouter()
 
   return (
-    <div className="fixed bottom-4 left-1/2 z-50 max-w-full -translate-x-1/2">
+    <div className="fixed bottom-4 left-1/2 z-50 hidden max-w-full -translate-x-1/2 md:block">
       <Dock className="items-end pb-3">
         {dockData.map((item, idx) => (
           <DockItem
