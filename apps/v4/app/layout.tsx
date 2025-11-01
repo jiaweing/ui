@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn"],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: "jiaweing",
+      url: "https://jiaweing.com",
     },
   ],
-  creator: "shadcn",
+  creator: "jiaweing",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -83,6 +83,7 @@ export default function RootLayout({
         <meta name="theme-color" content={META_THEME_COLORS.light} />
       </head>
       <body
+        data-vaul-drawer-wrapper
         className={cn(
           "group/body theme-neutral overscroll-none antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]",
           fontVariables

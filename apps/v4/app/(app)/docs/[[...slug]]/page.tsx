@@ -4,10 +4,10 @@ import {
   IconArrowRight,
   IconArrowUpRight,
 } from "@tabler/icons-react"
+import fm from "front-matter"
 import { findNeighbour } from "fumadocs-core/page-tree"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import fm from "front-matter"
 import { z } from "zod"
 
 import { DocsCopyPage } from "@/components/docs-copy-page"
@@ -103,20 +103,20 @@ export default async function Page(props: {
     <div className="flex items-stretch text-[1.05rem] sm:text-[15px] xl:w-full">
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="h-(--top-spacing) shrink-0" />
-        <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 px-4 py-6 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
+        <div className="mx-auto flex w-full max-w-2xl min-w-0 flex-1 flex-col gap-8 px-4 py-6 pb-20 text-neutral-800 md:px-0 lg:py-8 dark:text-neutral-300">
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
               <div className="flex items-start justify-between">
                 <h1 className="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
                   {doc.title}
                 </h1>
-                <div className="docs-nav bg-background/80 border-border/50 fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 border-t px-6 py-4 backdrop-blur-sm sm:static sm:z-0 sm:border-t-0 sm:bg-transparent sm:px-0 sm:pt-1.5 sm:backdrop-blur-none">
+                <div className="docs-nav fixed inset-x-0 bottom-0 isolate z-50 flex items-center gap-2 px-6 py-4 sm:static sm:z-0 sm:px-0 sm:pt-1.5">
                   <DocsCopyPage page={raw} url={absoluteUrl(page.url)} />
                   {neighbours.previous && (
                     <Button
                       variant="secondary"
                       size="icon"
-                      className="extend-touch-target ml-auto size-8 shadow-none md:size-7"
+                      className="extend-touch-target bg-background/20 hover:bg-background/30 ring-0.5 ml-auto size-8 border shadow-none inset-shadow-2xs backdrop-blur-xl md:size-7"
                       asChild
                     >
                       <Link href={neighbours.previous.url}>
@@ -129,7 +129,7 @@ export default async function Page(props: {
                     <Button
                       variant="secondary"
                       size="icon"
-                      className="extend-touch-target size-8 shadow-none md:size-7"
+                      className="extend-touch-target bg-background/20 hover:bg-background/30 ring-0.5 size-8 border shadow-none inset-shadow-2xs backdrop-blur-xl md:size-7"
                       asChild
                     >
                       <Link href={neighbours.next.url}>
