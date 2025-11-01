@@ -4,6 +4,8 @@ A set of beautifully designed components inspired by Apple OS 26, built directly
 
 ![hero](apps/v4/public/opengraph-image.png)
 
+![hero mobile](apps/v4/public/examples/mobile.png)
+
 ## Documentation
 
 Visit http://ui.jiaweing.com/docs to view the documentation.
