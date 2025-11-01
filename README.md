@@ -12,7 +12,7 @@
 
 <table width="100%">
   <tr>
-    <td align="center" width="35%">
+    <td align="center" width="34%">
       <img src="apps/v4/public/opengraph-image.png" alt="hero" width="100%" />
     </td>
     <td align="center" width="10%">
@@ -21,7 +21,7 @@
   </tr>
 </table>
 
-*This is not meant to be an exact copy of the Apple UI, but to create something that looks similar. This is a fork of shadcn/ui which will often get merged with upstream commits.*
+*Disclaimer: This is not meant to be an exact copy of the Apple UI, but to create something that looks similar. This is a fork of shadcn/ui which will often get merged with upstream commits.*
 
 
 ## Documentation
