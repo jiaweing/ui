@@ -119,14 +119,14 @@ const SAMPLE_DATA = {
     },
     {
       type: "user",
-      title: "maxleiter",
-      image: "https://github.com/maxleiter.png",
+      title: "shadcn",
+      image: "https://github.com/shadcn.png",
       workspace: "Workspace",
     },
     {
       type: "user",
-      title: "evilrabbit",
-      image: "https://github.com/evilrabbit.png",
+      title: "outweightheodds",
+      image: "https://github.com/outweightheodds.png",
       workspace: "Workspace",
     },
   ],

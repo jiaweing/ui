@@ -274,10 +274,7 @@ function DropdownMenuAvatarOnly() {
           className="size-8 rounded-full border-none p-0"
         >
           <Avatar>
-            <AvatarImage
-              src="https://github.com/maxleiter.png"
-              alt="maxleiter"
-            />
+            <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
             <AvatarFallback className="rounded-lg">LR</AvatarFallback>
           </Avatar>
         </Button>
@@ -289,16 +286,13 @@ function DropdownMenuAvatarOnly() {
         <DropdownMenuLabel className="p-0 font-normal">
           <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
             <Avatar>
-              <AvatarImage
-                src="https://github.com/maxleiter.png"
-                alt="maxleiter"
-              />
+              <AvatarImage src="https://github.com/shadcn.png" alt="shadcn" />
               <AvatarFallback className="rounded-lg">LR</AvatarFallback>
             </Avatar>
             <div className="grid flex-1 text-left text-sm leading-tight">
-              <span className="truncate font-semibold">maxleiter</span>
+              <span className="truncate font-semibold">shadcn</span>
               <span className="text-muted-foreground truncate text-xs">
-                maxleiter@example.com
+                shadcn@example.com
               </span>
             </div>
           </div>

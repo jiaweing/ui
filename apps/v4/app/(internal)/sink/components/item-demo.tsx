@@ -43,14 +43,14 @@ const people = [
     message: "My code is so clean, it does its own laundry",
   },
   {
-    username: "evilrabbit",
-    avatar: "https://github.com/evilrabbit.png",
+    username: "outweightheodds",
+    avatar: "https://github.com/outweightheodds.png",
     message:
       "Debugging is like being a detective in a crime movie where you're also the murderer",
   },
   {
-    username: "maxleiter",
-    avatar: "https://github.com/maxleiter.png",
+    username: "shadcn",
+    avatar: "https://github.com/shadcn.png",
     message:
       "I don't always test my code, but when I do, I test it in production",
   },
@@ -274,15 +274,15 @@ export function ItemDemo() {
                 </Avatar>
                 <Avatar>
                   <AvatarImage
-                    src="https://github.com/maxleiter.png"
-                    alt="@maxleiter"
+                    src="https://github.com/shadcn.png"
+                    alt="@shadcn"
                   />
                   <AvatarFallback>LR</AvatarFallback>
                 </Avatar>
                 <Avatar>
                   <AvatarImage
-                    src="https://github.com/evilrabbit.png"
-                    alt="@evilrabbit"
+                    src="https://github.com/outweightheodds.png"
+                    alt="@outweightheodds"
                   />
                   <AvatarFallback>ER</AvatarFallback>
                 </Avatar>

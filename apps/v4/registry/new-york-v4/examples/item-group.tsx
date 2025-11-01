@@ -1,5 +1,5 @@
-import * as React from "react"
 import { PlusIcon } from "lucide-react"
+import * as React from "react"
 
 import {
   Avatar,
@@ -25,14 +25,14 @@ const people = [
     email: "shadcn@vercel.com",
   },
   {
-    username: "maxleiter",
-    avatar: "https://github.com/maxleiter.png",
-    email: "maxleiter@vercel.com",
+    username: "shadcn",
+    avatar: "https://github.com/shadcn.png",
+    email: "shadcn@vercel.com",
   },
   {
-    username: "evilrabbit",
-    avatar: "https://github.com/evilrabbit.png",
-    email: "evilrabbit@vercel.com",
+    username: "outweightheodds",
+    avatar: "https://github.com/outweightheodds.png",
+    email: "outweightheodds@vercel.com",
   },
 ]
 

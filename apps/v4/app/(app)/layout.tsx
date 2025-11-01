@@ -1,5 +1,6 @@
 import { ClientLayoutWrapper } from "@/components/client-layout-wrapper"
 import { SiteHeader } from "@/components/site-header"
+import { AppleStyleDock } from "@/components/apple-style-dock"
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,6 +10,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     >
       <SiteHeader />
       <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
+      <AppleStyleDock />
       {/* <SiteFooter /> */}
     </div>
   )

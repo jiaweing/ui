@@ -1,12 +1,12 @@
 "use client"
 
-import * as React from "react"
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronsUpDown,
   PlusCircleIcon,
 } from "lucide-react"
+import * as React from "react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -62,11 +62,11 @@ const users = [
   },
   {
     id: "2",
-    username: "maxleiter",
+    username: "shadcn",
   },
   {
     id: "3",
-    username: "evilrabbit",
+    username: "outweightheodds",
   },
 ] as const
 

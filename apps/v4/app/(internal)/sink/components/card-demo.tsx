@@ -101,16 +101,13 @@ export function CardDemo() {
               <AvatarFallback>JW</AvatarFallback>
             </Avatar>
             <Avatar>
-              <AvatarImage
-                src="https://github.com/maxleiter.png"
-                alt="@maxleiter"
-              />
+              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>LR</AvatarFallback>
             </Avatar>
             <Avatar>
               <AvatarImage
-                src="https://github.com/evilrabbit.png"
-                alt="@evilrabbit"
+                src="https://github.com/outweightheodds.png"
+                alt="@outweightheodds"
               />
               <AvatarFallback>ER</AvatarFallback>
             </Avatar>
