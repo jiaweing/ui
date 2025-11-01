@@ -1,24 +1,25 @@
 "use client"
 
+import { useIsMobile } from "@/hooks/use-mobile"
+import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 
-export function LiveDateTime() {
+export function LiveDateTime({ className }: { className?: string }) {
   const [dateTime, setDateTime] = useState("")
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     const updateDateTime = () => {
       const now = new Date()
 
-      // Format: Mon Jun 10 9:41 AM
-      const datePart = now
-        .toLocaleDateString("en-US", {
-          weekday: "short",
-          month: "short",
-          day: "numeric",
+      const mobileTimePart = now
+        .toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: false,
         })
-        .replace(",", "")
 
-      const timePart = now
+      const desktopTimePart = now
         .toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "2-digit",
@@ -26,9 +27,22 @@ export function LiveDateTime() {
         })
         .replace(",", "")
 
-      const formatted = `${datePart} ${timePart}`
+      if (isMobile) {
+        // Mobile: Show only time without AM/PM (24-hour format)
+        setDateTime(mobileTimePart)
+      } else {
+        // Desktop: Show full date and time with AM/PM
+        const datePart = now
+          .toLocaleDateString("en-US", {
+            weekday: "short",
+            month: "short",
+            day: "numeric",
+          })
+          .replace(",", "")
 
-      setDateTime(formatted)
+        const formatted = `${datePart} ${desktopTimePart}`
+        setDateTime(formatted)
+      }
     }
 
     // Update immediately
@@ -38,9 +52,16 @@ export function LiveDateTime() {
     const interval = setInterval(updateDateTime, 1000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [isMobile])
 
   return (
-    <div className="text-foreground ml-2 text-sm font-medium">{dateTime}</div>
+    <div
+      className={cn(
+        "text-foreground z-1 ml-2 text-sm font-semibold tracking-wide md:font-medium md:tracking-normal",
+        className
+      )}
+    >
+      {dateTime}
+    </div>
   )
 }

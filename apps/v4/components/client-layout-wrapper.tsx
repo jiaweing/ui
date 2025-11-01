@@ -14,10 +14,9 @@ export function ClientLayoutWrapper({ children }: ClientLayoutWrapperProps) {
   return (
     <>
       <ThemeBackground />
-      <div className="flex-1 flex items-center justify-center pt-4 pb-16 px-4">
-        <ResizableWindow title={pageTitle}>
-          {children}
-        </ResizableWindow>
+      <div className="absolute top-0 left-1/2 z-50 hidden h-10 w-48 -translate-x-1/2 cursor-pointer rounded-b-2xl bg-black shadow-md transition-transform duration-300 ease-out hover:scale-105 md:block" />
+      <div className="flex flex-1 items-center justify-center px-4 md:pt-4 md:pb-16">
+        <ResizableWindow title={pageTitle}>{children}</ResizableWindow>
       </div>
     </>
   )

@@ -1,5 +1,6 @@
 "use client"
 
+import { useIsMobile } from "@/hooks/use-mobile"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 
@@ -17,6 +18,7 @@ const darkBackgrounds = [
 
 export function ThemeBackground() {
   const { theme, systemTheme } = useTheme()
+  const isMobile = useIsMobile()
   const [mounted, setMounted] = useState(false)
   const [backgroundImage, setBackgroundImage] = useState("")
 
@@ -42,9 +44,11 @@ export function ThemeBackground() {
 
   return (
     <div
-      className="fixed inset-0 -z-10 m-2 rounded-4xl bg-cover bg-center bg-no-repeat"
+      className={`fixed inset-0 -z-10 rounded-4xl bg-cover bg-center bg-no-repeat ${isMobile ? "bg-background m-2" : "m-2"}`}
       style={{
-        backgroundImage: `url(/backgrounds/${backgroundImage})`,
+        backgroundImage: isMobile
+          ? "none"
+          : `url(/backgrounds/${backgroundImage})`,
       }}
     />
   )

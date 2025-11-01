@@ -16,7 +16,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
-import { Separator } from "@/registry/new-york-v4/ui/separator"
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
@@ -96,7 +95,7 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
     <Button
       variant="secondary"
       size="sm"
-      className="peer -ml-0.5 size-8 shadow-none md:size-7 md:text-[0.8rem]"
+      className="peer bg-background/20 hover:bg-background/30 ring-0.5 size-8 border shadow-none inset-shadow-2xs backdrop-blur-xl md:size-7 md:text-[0.8rem]"
     >
       <IconChevronDown className="rotate-180 sm:rotate-0" />
     </Button>
@@ -104,12 +103,12 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
 
   return (
     <Popover>
-      <div className="bg-secondary group/buttons relative flex rounded-lg *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10">
+      <div className="relative flex gap-1 rounded-lg *:[[data-slot=button]]:focus-visible:relative *:[[data-slot=button]]:focus-visible:z-10">
         <PopoverAnchor />
         <Button
           variant="secondary"
           size="sm"
-          className="h-8 shadow-none md:h-7 md:text-[0.8rem]"
+          className="bg-background/20 hover:bg-background/30 ring-0.5 h-8 border shadow-none inset-shadow-2xs backdrop-blur-xl md:h-7 md:text-[0.8rem]"
           onClick={() => copyToClipboard(page)}
         >
           {isCopied ? <IconCheck /> : <IconCopy />}
@@ -127,10 +126,6 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-        <Separator
-          orientation="vertical"
-          className="!bg-foreground/10 absolute top-0 right-8 z-0 !h-8 peer-focus-visible:opacity-0 sm:right-7 sm:!h-7"
-        />
         <PopoverTrigger asChild className="flex sm:hidden">
           {trigger}
         </PopoverTrigger>

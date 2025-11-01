@@ -12,6 +12,7 @@ import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
 // import blocks from "@/registry/__blocks__.json"
 import { Button } from "@/registry/new-york-v4/ui/button"
+import { Battery } from "lucide-react"
 import { GitHubLink } from "./github-link"
 
 export function SiteHeader() {
@@ -20,20 +21,10 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* <ProgressiveBlur
-        position="top"
-        height="100px"
-        className="z-0"
-        blurAmount="8px"
-        useThemeBackground
-      /> */}
       <div className="container-wrapper 3xl:fixed:px-0 pt-1 pr-8 pl-6">
         <div className="3xl:fixed:container flex h-(--header-height) items-center gap-2 **:data-[slot=separator]:!h-4">
-          <MobileNav
-            tree={pageTree}
-            items={siteConfig.navItems}
-            className="z-1 flex lg:hidden"
-          />
+          <LiveDateTime className="md:hidden" />
+          <MobileNav tree={pageTree} items={siteConfig.navItems} />
           <Button asChild variant="ghost" className="z-1 hidden h-8 lg:flex">
             <Link href="/">
               <Icons.logo className="size-5" />
@@ -58,7 +49,8 @@ export function SiteHeader() {
             <SiteConfig className="3xl:flex z-1 hidden" />
             {/* <Separator orientation="vertical" /> */}
             <ModeSwitcher />
-            <LiveDateTime />
+            <LiveDateTime className="hidden lg:block" />
+            <Battery className="text-foreground z-1 ml-2 md:hidden" />
           </div>
         </div>
       </div>
