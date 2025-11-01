@@ -94,7 +94,7 @@ export default function RootLayout({
             <ActiveThemeProvider initialTheme="neutral">
               {children}
               <TailwindIndicator />
-              <Toaster position="top-center" />
+              <Toaster position="top-right" />
               <Analytics />
             </ActiveThemeProvider>
           </LayoutProvider>
