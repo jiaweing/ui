@@ -15,6 +15,7 @@ import {
   DrawerTrigger,
 } from "@/registry/new-york-v4/ui/drawer"
 import { Menu } from "lucide-react"
+import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 
 const TOP_LEVEL_SECTIONS = [
   { name: "Get Started", href: "/docs" },
@@ -74,6 +75,13 @@ export function MobileNav({
             </Button>
           </DrawerTrigger>
           <DrawerContent className="max-h-[100vh]">
+            <ProgressiveBlur
+              position="top"
+              height="150px"
+              className="z-10 rounded-t-4xl"
+              blurAmount="50px"
+              useThemeBackground
+            />
             <div className="flex flex-col gap-12 overflow-auto px-6 py-6">
               <div className="flex flex-col gap-4">
                 <div className="text-muted-foreground text-sm font-medium">
@@ -147,6 +155,13 @@ export function MobileNav({
                 })}
               </div>
             </div>
+            <ProgressiveBlur
+              position="bottom"
+              height="100px"
+              className="z-10 rounded-b-4xl"
+              blurAmount="50px"
+              useThemeBackground
+            />
           </DrawerContent>
         </Drawer>
       </div>
