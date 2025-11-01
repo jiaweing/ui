@@ -12,7 +12,14 @@ export function LiveDateTime({ className }: { className?: string }) {
     const updateDateTime = () => {
       const now = new Date()
 
-      const timePart = now
+      const mobileTimePart = now
+        .toLocaleTimeString("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+          hour12: false,
+        })
+
+      const desktopTimePart = now
         .toLocaleTimeString("en-US", {
           hour: "numeric",
           minute: "2-digit",
@@ -21,10 +28,10 @@ export function LiveDateTime({ className }: { className?: string }) {
         .replace(",", "")
 
       if (isMobile) {
-        // Mobile: Show only time
-        setDateTime(timePart)
+        // Mobile: Show only time without AM/PM (24-hour format)
+        setDateTime(mobileTimePart)
       } else {
-        // Desktop: Show full date and time
+        // Desktop: Show full date and time with AM/PM
         const datePart = now
           .toLocaleDateString("en-US", {
             weekday: "short",
@@ -33,7 +40,7 @@ export function LiveDateTime({ className }: { className?: string }) {
           })
           .replace(",", "")
 
-        const formatted = `${datePart} ${timePart}`
+        const formatted = `${datePart} ${desktopTimePart}`
         setDateTime(formatted)
       }
     }
@@ -50,7 +57,7 @@ export function LiveDateTime({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "text-foreground z-1 ml-2 text-sm font-semibold tracking-wider md:font-medium md:tracking-normal",
+        "text-foreground z-1 ml-2 text-sm font-semibold tracking-wide md:font-medium md:tracking-normal",
         className
       )}
     >

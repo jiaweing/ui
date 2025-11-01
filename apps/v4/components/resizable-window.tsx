@@ -215,10 +215,11 @@ export function ResizableWindow({
     <main
       ref={windowRef}
       className={cn(
-        "relative flex flex-col",
+        "flex flex-col",
+        isMobile ? "absolute top-0 left-0 z-10" : "relative",
         !isMobile
           ? "bg-background rounded-4xl drop-shadow-2xl backdrop-blur-3xl"
-          : "px-1",
+          : "",
         (isResizing || isDragging) && "select-none",
         !(isResizing || isDragging) && "transition-all duration-150",
         className
@@ -226,8 +227,9 @@ export function ResizableWindow({
       style={
         isMobile
           ? {
-              width: "100vw",
-              height: "90vh",
+              width: "calc(100% - 1rem)",
+              height: "calc(100vh - 1rem)",
+              margin: "0.5rem",
             }
           : {
               width: dimensions.width,
@@ -241,17 +243,22 @@ export function ResizableWindow({
     >
       {/* Content flows under title bar - full height */}
       <div className={cn("absolute inset-0 overflow-hidden rounded-4xl")}>
-        <div className={cn("h-full w-full overflow-auto", !isMobile && "pr-2")}>
+        <div
+          className={cn(
+            "h-full w-full overflow-auto",
+            !isMobile ? "pr-2" : "pt-10"
+          )}
+        >
           {children}
         </div>
       </div>
 
-      {/* Progressive blur overlay at top - disabled during interactions for performance and hidden on mobile */}
-      {!isMobile && !isDragging && !isResizing && (
+      {/* Progressive blur overlay at top - disabled during interactions for performance */}
+      {!isDragging && !isResizing && (
         <ProgressiveBlur
           position="top"
           height="100px"
-          className="pointer-events-none absolute top-0 right-0 left-0 z-10 rounded-t-3xl"
+          className="pointer-events-none absolute top-0 right-0 left-0 z-10 rounded-t-4xl"
           blurAmount="50px"
           useThemeBackground
         />

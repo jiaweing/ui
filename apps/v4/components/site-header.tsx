@@ -14,7 +14,6 @@ import { source } from "@/lib/source"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Battery } from "lucide-react"
 import { GitHubLink } from "./github-link"
-import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 
 export function SiteHeader() {
   const colors = getColors()
@@ -23,13 +22,6 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full">
       <div className="container-wrapper 3xl:fixed:px-0 pt-1 pr-8 pl-6">
-        <ProgressiveBlur
-          className="z-0 m-2 mr-4 w-full rounded-4xl md:hidden"
-          position="top"
-          height="100px"
-          blurAmount="8px"
-          useThemeBackground
-        />
         <div className="3xl:fixed:container flex h-(--header-height) items-center gap-2 **:data-[slot=separator]:!h-4">
           <LiveDateTime className="md:hidden" />
           <MobileNav tree={pageTree} items={siteConfig.navItems} />

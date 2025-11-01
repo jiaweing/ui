@@ -1,7 +1,7 @@
 "use client"
 
 import Link, { LinkProps } from "next/link"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import * as React from "react"
 
 import { PAGES_NEW } from "@/lib/docs"
@@ -50,11 +50,19 @@ export function MobileNav({
   className?: string
 }) {
   const [open, setOpen] = React.useState(false)
+  const pathname = usePathname()
+  const isDocsPage = pathname?.startsWith("/docs")
 
   return (
     <>
       {/* Floating Menu Button - Bottom Right */}
-      <div className={cn("fixed right-6 bottom-20 z-50 lg:hidden", className)}>
+      <div
+        className={cn(
+          "fixed right-6 z-50 lg:hidden",
+          isDocsPage ? "bottom-14" : "bottom-6",
+          className
+        )}
+      >
         <Drawer open={open} onOpenChange={setOpen}>
           <DrawerTrigger asChild>
             <Button
