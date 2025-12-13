@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { ActiveThemeProvider } from "@/components/active-theme"
 import { Analytics } from "@/components/analytics"
@@ -64,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={fontVariables}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -91,8 +92,8 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LayoutProvider>
-            <ActiveThemeProvider initialTheme="neutral">
-              {children}
+            <ActiveThemeProvider>
+              <NuqsAdapter>{children}</NuqsAdapter>
               <TailwindIndicator />
               <Toaster position="top-right" />
               <Analytics />

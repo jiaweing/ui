@@ -13,7 +13,7 @@ import { useMutationObserver } from "@/hooks/use-mutation-observer"
 import { type Color, type ColorPalette } from "@/lib/colors"
 import { trackEvent } from "@/lib/events"
 import { showMcpDocs } from "@/lib/flags"
-import { source } from "@/lib/source"
+import { type source } from "@/lib/source"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
@@ -199,7 +199,7 @@ export function CommandMenu({
           onClick={() => setOpen(true)}
           {...props}
         >
-            <Search />
+          <Search />
         </Button>
       </DialogTrigger>
       <DialogContent

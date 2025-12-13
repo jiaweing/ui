@@ -2,8 +2,10 @@
 
 import Link from "next/link"
 
+import { PAGES_NEW } from "@/lib/docs"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
+import { usePathname } from "next/navigation"
 
 export function MainNav({
   items,
@@ -12,15 +14,23 @@ export function MainNav({
 }: React.ComponentProps<"nav"> & {
   items: { href: string; label: string }[]
 }) {
-  // const pathname = usePathname()
+  const pathname = usePathname()
 
   return (
-    <nav className={cn("items-center", className)} {...props}>
+    <nav className={cn("items-center gap-0", className)} {...props}>
       {items.map((item) => (
-        <Button key={item.href} variant="ghost" asChild size="sm">
+        <Button
+          key={item.href}
+          variant="ghost"
+          asChild
+          size="sm"
+          className="px-2.5"
+        >
           <Link
             href={item.href}
-            // className={cn(pathname === item.href && "text-primary")}
+            data-active={pathname === item.href}
+            data-new={PAGES_NEW.includes(item.href)}
+            className="relative items-center"
           >
             {item.label}
           </Link>

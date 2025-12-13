@@ -1,3 +1,5 @@
+import { PlusSignIcon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
 import Link from "next/link"
 
 import { CommandMenu } from "@/components/command-menu"
@@ -51,6 +53,22 @@ export function SiteHeader() {
             <ModeSwitcher />
             <LiveDateTime className="hidden lg:block" />
             <Battery className="text-foreground z-1 ml-2 md:hidden" />
+            <Button
+              asChild
+              size="sm"
+              className="hidden h-[31px] rounded-lg sm:flex"
+            >
+              <Link href="/create">
+                <HugeiconsIcon icon={PlusSignIcon} />
+                New Project
+              </Link>
+            </Button>
+            <Button asChild size="sm" className="h-[31px] rounded-lg sm:hidden">
+              <Link href="/create">
+                <HugeiconsIcon icon={PlusSignIcon} />
+                New
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
