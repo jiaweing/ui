@@ -1,11 +1,6 @@
-import Link from "next/link"
-import { PlusSignIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
 import { Battery } from "lucide-react"
+import Link from "next/link"
 
-import { getColors } from "@/lib/colors"
-import { siteConfig } from "@/lib/config"
-import { source } from "@/lib/source"
 import { CommandMenu } from "@/components/command-menu"
 import { Icons } from "@/components/icons"
 import { LiveDateTime } from "@/components/live-date-time"
@@ -13,6 +8,9 @@ import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ModeSwitcher } from "@/components/mode-switcher"
 import { SiteConfig } from "@/components/site-config"
+import { getColors } from "@/lib/colors"
+import { siteConfig } from "@/lib/config"
+import { source } from "@/lib/source"
 // import blocks from "@/registry/__blocks__.json"
 import { Button } from "@/registry/new-york-v4/ui/button"
 
@@ -54,7 +52,7 @@ export function SiteHeader() {
             <ModeSwitcher />
             <LiveDateTime className="hidden lg:block" />
             <Battery className="text-foreground z-1 ml-2 md:hidden" />
-            <Button
+            {/* <Button
               asChild
               size="sm"
               className="hidden h-[31px] rounded-lg sm:flex"
@@ -69,7 +67,7 @@ export function SiteHeader() {
                 <HugeiconsIcon icon={PlusSignIcon} />
                 New
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
