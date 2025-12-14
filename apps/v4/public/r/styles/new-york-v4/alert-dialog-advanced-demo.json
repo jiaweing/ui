@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-dialog-advanced-demo",
-  "type": "registry:example",
   "registryDependencies": [
     "alert-dialog",
     "button"
@@ -9,8 +8,9 @@
   "files": [
     {
       "path": "registry/new-york-v4/examples/alert-dialog-advanced-demo.tsx",
-      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/new-york-v4/ui/alert-dialog\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nexport default function AlertDialogAdvancedDemo() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger asChild>\n        <Button variant=\"outline\">Show Advanced Dialog</Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Delete this conversation?</AlertDialogTitle>\n          <AlertDialogDescription>\n            This message has not been sent and contains unsaved changes. You can\n            save it as a draft to work on later.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogAction>Save</AlertDialogAction>\n          <AlertDialogAction variant=\"destructive\">\n            Don't Save\n          </AlertDialogAction>\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  )\n}\n",
+      "content": "import {\n  AlertDialog,\n  AlertDialogAction,\n  AlertDialogCancel,\n  AlertDialogContent,\n  AlertDialogDescription,\n  AlertDialogFooter,\n  AlertDialogHeader,\n  AlertDialogTitle,\n  AlertDialogTrigger,\n} from \"@/registry/new-york-v4/ui/alert-dialog\"\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\n\nexport default function AlertDialogAdvancedDemo() {\n  return (\n    <AlertDialog>\n      <AlertDialogTrigger asChild>\n        <Button variant=\"outline\">Show Advanced Dialog</Button>\n      </AlertDialogTrigger>\n      <AlertDialogContent>\n        <AlertDialogHeader>\n          <AlertDialogTitle>Delete this conversation?</AlertDialogTitle>\n          <AlertDialogDescription>\n            This message has not been sent and contains unsaved changes. You can\n            save it as a draft to work on later.\n          </AlertDialogDescription>\n        </AlertDialogHeader>\n        <AlertDialogFooter>\n          <AlertDialogAction>Save</AlertDialogAction>\n          <AlertDialogAction variant=\"destructive\">\n            Don&apos;t Save\n          </AlertDialogAction>\n          <AlertDialogCancel>Cancel</AlertDialogCancel>\n        </AlertDialogFooter>\n      </AlertDialogContent>\n    </AlertDialog>\n  )\n}\n",
       "type": "registry:example"
     }
-  ]
+  ],
+  "type": "registry:example"
 }

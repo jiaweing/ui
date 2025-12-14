@@ -1,13 +1,14 @@
 import type { Metadata } from "next"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
 
+import { META_THEME_COLORS, siteConfig } from "@/lib/config"
+import { fontVariables } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
+import { LayoutProvider } from "@/hooks/use-layout"
 import { ActiveThemeProvider } from "@/components/active-theme"
 import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import { LayoutProvider } from "@/hooks/use-layout"
-import { META_THEME_COLORS, siteConfig } from "@/lib/config"
-import { fontVariables } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
 import { Toaster } from "@/registry/new-york-v4/ui/sonner"
 
 import "@/styles/globals.css"
@@ -64,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={fontVariables}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -91,8 +92,8 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LayoutProvider>
-            <ActiveThemeProvider initialTheme="neutral">
-              {children}
+            <ActiveThemeProvider>
+              <NuqsAdapter>{children}</NuqsAdapter>
               <TailwindIndicator />
               <Toaster position="top-right" />
               <Analytics />

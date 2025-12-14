@@ -1,8 +1,9 @@
 "use client"
 
-import { useIsMobile } from "@/hooks/use-mobile"
-import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import { useTheme } from "next-themes"
+
+import { useIsMobile } from "@/hooks/use-mobile"
 
 const lightBackgrounds = [
   "26-Tahoe-Beach-Dawn.png",
@@ -23,6 +24,7 @@ export function ThemeBackground() {
   const [backgroundImage, setBackgroundImage] = useState("")
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
   }, [])
 
@@ -35,6 +37,7 @@ export function ThemeBackground() {
     const randomBackground =
       backgroundsToUse[Math.floor(Math.random() * backgroundsToUse.length)]
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setBackgroundImage(randomBackground)
   }, [theme, systemTheme, mounted])
 

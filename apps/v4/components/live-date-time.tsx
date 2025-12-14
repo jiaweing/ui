@@ -1,8 +1,9 @@
 "use client"
 
-import { useIsMobile } from "@/hooks/use-mobile"
-import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
+
+import { cn } from "@/lib/utils"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export function LiveDateTime({ className }: { className?: string }) {
   const [dateTime, setDateTime] = useState("")
@@ -12,12 +13,11 @@ export function LiveDateTime({ className }: { className?: string }) {
     const updateDateTime = () => {
       const now = new Date()
 
-      const mobileTimePart = now
-        .toLocaleTimeString("en-US", {
-          hour: "numeric",
-          minute: "2-digit",
-          hour12: false,
-        })
+      const mobileTimePart = now.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: false,
+      })
 
       const desktopTimePart = now
         .toLocaleTimeString("en-US", {

@@ -28,7 +28,7 @@ export default function AlertDialogAdvancedDemo() {
         <AlertDialogFooter>
           <AlertDialogAction>Save</AlertDialogAction>
           <AlertDialogAction variant="destructive">
-            Don't Save
+            Don&apos;t Save
           </AlertDialogAction>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
         </AlertDialogFooter>

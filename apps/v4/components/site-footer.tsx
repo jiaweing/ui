@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/config"
+
 import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 
 export function SiteFooter() {

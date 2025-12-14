@@ -97,9 +97,12 @@ function AlertDialogFooter({
         ? React.Children.map(children, (child, index) => (
             <div key={index} className="flex-1">
               {React.isValidElement(child)
-                ? React.cloneElement(child as React.ReactElement<any>, {
-                    className: cn("w-full", child.props.className),
-                  })
+                ? React.cloneElement(
+                    child as React.ReactElement<{ className?: string }>,
+                    {
+                      className: cn("w-full", child.props.className),
+                    }
+                  )
                 : child}
             </div>
           ))

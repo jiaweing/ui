@@ -1,10 +1,8 @@
 import Link from "next/link"
-import * as React from "react"
 
-import { Icons } from "@/components/icons"
 import { siteConfig } from "@/lib/config"
+import { Icons } from "@/components/icons"
 import { Button } from "@/registry/new-york-v4/ui/button"
-import { Skeleton } from "@/registry/new-york-v4/ui/skeleton"
 
 export function GitHubLink() {
   return (
@@ -24,6 +22,11 @@ export async function StarsCount() {
     next: { revalidate: 86400 }, // Cache for 1 day (86400 seconds)
   })
   const json = await data.json()
+
+  const formattedCount =
+    json.stargazers_count >= 1000
+      ? `${Math.round(json.stargazers_count / 1000)}k`
+      : json.stargazers_count.toLocaleString()
 
   return (
     <span className="text-muted-foreground text-xs tabular-nums">

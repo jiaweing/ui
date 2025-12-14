@@ -29,11 +29,14 @@ const ProgressiveBlur = ({
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true)
   }, [])
 
   // Determine if dark theme is active
-  const isDarkTheme = mounted && (theme === "dark" || (theme === "system" && systemTheme === "dark"))
+  const isDarkTheme =
+    mounted &&
+    (theme === "dark" || (theme === "system" && systemTheme === "dark"))
 
   // Get background color based on theme or props
   const getBackgroundColor = () => {
@@ -59,8 +62,8 @@ const ProgressiveBlur = ({
         background: transparent
           ? "transparent"
           : isTop
-          ? `linear-gradient(to top, transparent, ${bgColor})`
-          : `linear-gradient(to bottom, transparent, ${bgColor})`,
+            ? `linear-gradient(to top, transparent, ${bgColor})`
+            : `linear-gradient(to bottom, transparent, ${bgColor})`,
         maskImage: isTop
           ? `linear-gradient(to bottom, black 0%, transparent 100%)`
           : `linear-gradient(to top, black 0%, transparent 100%)`,
