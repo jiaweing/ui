@@ -1,20 +1,20 @@
 "use client"
 
+import * as React from "react"
+import { useRouter } from "next/navigation"
 import { type DialogProps } from "@radix-ui/react-dialog"
 import { IconArrowRight } from "@tabler/icons-react"
 import { useDocsSearch } from "fumadocs-core/search/client"
 import { CornerDownLeftIcon, Search, SquareDashedIcon } from "lucide-react"
-import { useRouter } from "next/navigation"
-import * as React from "react"
 
-import { copyToClipboardWithMeta } from "@/components/copy-button"
-import { useConfig } from "@/hooks/use-config"
-import { useMutationObserver } from "@/hooks/use-mutation-observer"
 import { type Color, type ColorPalette } from "@/lib/colors"
 import { trackEvent } from "@/lib/events"
 import { showMcpDocs } from "@/lib/flags"
 import { type source } from "@/lib/source"
 import { cn } from "@/lib/utils"
+import { useConfig } from "@/hooks/use-config"
+import { useMutationObserver } from "@/hooks/use-mutation-observer"
+import { copyToClipboardWithMeta } from "@/components/copy-button"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,

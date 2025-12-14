@@ -1,5 +1,5 @@
-import { BathIcon, BedIcon, LandPlotIcon } from "lucide-react"
 import Image from "next/image"
+import { BathIcon, BedIcon, LandPlotIcon } from "lucide-react"
 
 import {
   Avatar,

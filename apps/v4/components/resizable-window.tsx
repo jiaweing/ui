@@ -1,8 +1,10 @@
 "use client"
 
-import { useIsMobile } from "@/hooks/use-mobile"
-import { cn } from "@/lib/utils"
 import { useCallback, useEffect, useRef, useState } from "react"
+
+import { cn } from "@/lib/utils"
+import { useIsMobile } from "@/hooks/use-mobile"
+
 import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 
 interface ResizableWindowProps {
@@ -171,6 +173,8 @@ export function ResizableWindow({
       effectiveMaxWidth,
       effectiveMaxHeight,
       isMobile,
+      position.x,
+      position.y,
     ]
   )
 

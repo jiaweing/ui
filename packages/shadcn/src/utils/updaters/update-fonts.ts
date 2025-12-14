@@ -36,9 +36,8 @@ export async function massageTreeForFonts(
     projectInfo.framework.name === "next-app" ||
     projectInfo.framework.name === "next-pages"
   ) {
-    tree.cssVars.theme[
-      fontSans.font.variable
-    ] = `var(${fontSans.font.variable})`
+    tree.cssVars.theme[fontSans.font.variable] =
+      `var(${fontSans.font.variable})`
     return tree
   }
 

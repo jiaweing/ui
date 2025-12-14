@@ -1,8 +1,9 @@
 "use client"
 
+import * as React from "react"
 import Link, { type LinkProps } from "next/link"
 import { usePathname, useRouter } from "next/navigation"
-import * as React from "react"
+import { Menu } from "lucide-react"
 
 import { PAGES_NEW } from "@/lib/docs"
 import { showMcpDocs } from "@/lib/flags"
@@ -14,7 +15,7 @@ import {
   DrawerContent,
   DrawerTrigger,
 } from "@/registry/new-york-v4/ui/drawer"
-import { Menu } from "lucide-react"
+
 import { ProgressiveBlur } from "./ui/skiper-ui/progressive-blur"
 
 const TOP_LEVEL_SECTIONS = [

@@ -1,11 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 import { PAGES_NEW } from "@/lib/docs"
 import { cn } from "@/lib/utils"
 import { Button } from "@/registry/new-york-v4/ui/button"
-import { usePathname } from "next/navigation"
 
 export function MainNav({
   items,

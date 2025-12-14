@@ -361,7 +361,7 @@ async function buildRegistryJsonFile(styleName: string) {
   const registryJsonPath = path.join(outputDir, "registry.json")
   await fs.writeFile(registryJsonPath, JSON.stringify(fixedRegistry, null, 2))
   await new Promise<void>((resolve, reject) => {
-    execFile("prettier", ["--write", registryJsonPath], (error) => {
+    exec(`prettier --write "${registryJsonPath}"`, (error) => {
       if (error) {
         reject(error)
       } else {
@@ -442,7 +442,7 @@ async function buildConfig() {
 
   // Format with prettier.
   await new Promise<void>((resolve, reject) => {
-    execFile("prettier", ["--write", outputPath], (error) => {
+    exec(`prettier --write "${outputPath}"`, (error) => {
       if (error) {
         reject(error)
       } else {

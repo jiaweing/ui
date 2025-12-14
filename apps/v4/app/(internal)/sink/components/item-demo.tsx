@@ -1,7 +1,7 @@
+import * as React from "react"
+import Image from "next/image"
 import { IconChevronRight, IconDownload } from "@tabler/icons-react"
 import { PlusIcon, TicketIcon } from "lucide-react"
-import Image from "next/image"
-import * as React from "react"
 
 import {
   Avatar,

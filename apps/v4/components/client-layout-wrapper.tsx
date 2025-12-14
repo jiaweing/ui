@@ -1,8 +1,8 @@
 "use client"
 
+import { usePageTitle } from "@/hooks/use-page-title"
 import { ResizableWindow } from "@/components/resizable-window"
 import { ThemeBackground } from "@/components/theme-background"
-import { usePageTitle } from "@/hooks/use-page-title"
 
 interface ClientLayoutWrapperProps {
   children: React.ReactNode

@@ -1,8 +1,8 @@
 "use client"
 
-import { useTheme } from "next-themes"
-import Script from "next/script"
 import * as React from "react"
+import Script from "next/script"
+import { useTheme } from "next-themes"
 
 import { useMetaColor } from "@/hooks/use-meta-color"
 import { Button } from "@/registry/new-york-v4/ui/button"

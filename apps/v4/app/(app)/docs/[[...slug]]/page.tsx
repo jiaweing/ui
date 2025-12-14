@@ -1,3 +1,5 @@
+import Link from "next/link"
+import { notFound } from "next/navigation"
 import { mdxComponents } from "@/mdx-components"
 import {
   IconArrowLeft,
@@ -6,14 +8,12 @@ import {
 } from "@tabler/icons-react"
 import fm from "front-matter"
 import { findNeighbour } from "fumadocs-core/page-tree"
-import Link from "next/link"
-import { notFound } from "next/navigation"
 import { z } from "zod"
 
-import { DocsCopyPage } from "@/components/docs-copy-page"
-import { DocsTableOfContents } from "@/components/docs-toc"
 import { source } from "@/lib/source"
 import { absoluteUrl } from "@/lib/utils"
+import { DocsCopyPage } from "@/components/docs-copy-page"
+import { DocsTableOfContents } from "@/components/docs-toc"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
 import { Button } from "@/registry/new-york-v4/ui/button"
 

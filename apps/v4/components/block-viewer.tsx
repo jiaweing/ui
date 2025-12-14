@@ -1,5 +1,8 @@
 "use client"
 
+import * as React from "react"
+import Image from "next/image"
+import Link from "next/link"
 import {
   Check,
   ChevronRight,
@@ -13,9 +16,6 @@ import {
   Tablet,
   Terminal,
 } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import * as React from "react"
 import { type ImperativePanelHandle } from "react-resizable-panels"
 import {
   type registryItemFileSchema,
@@ -23,15 +23,15 @@ import {
 } from "shadcn/schema"
 import { type z } from "zod"
 
-import { getIconForLanguageExtension } from "@/components/icons"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { trackEvent } from "@/lib/events"
 import {
   type createFileTreeForRegistryItemFiles,
   type FileTree,
 } from "@/lib/registry"
 import { cn } from "@/lib/utils"
+import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
+import { getIconForLanguageExtension } from "@/components/icons"
+import { OpenInV0Button } from "@/components/open-in-v0-button"
 import { type Style } from "@/registry/_legacy-styles"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import {

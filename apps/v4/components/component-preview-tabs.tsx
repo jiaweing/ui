@@ -5,6 +5,18 @@ import { useTheme } from "next-themes"
 
 import { cn } from "@/lib/utils"
 
+const lightBackgrounds = [
+  "26-Tahoe-Beach-Dawn.png",
+  "26-Tahoe-Beach-Day.png",
+  "26-Tahoe-Light-6K.png",
+]
+
+const darkBackgrounds = [
+  "26-Tahoe-Beach-Dusk.png",
+  "26-Tahoe-Beach-Night.png",
+  "26-Tahoe-Dark-6K.png",
+]
+
 export function ComponentPreviewTabs({
   className,
   align = "center",
@@ -22,19 +34,8 @@ export function ComponentPreviewTabs({
 }) {
   const { theme, systemTheme } = useTheme()
 
-  const lightBackgrounds = [
-    "26-Tahoe-Beach-Dawn.png",
-    "26-Tahoe-Beach-Day.png",
-    "26-Tahoe-Light-6K.png"
-  ]
-
-  const darkBackgrounds = [
-    "26-Tahoe-Beach-Dusk.png",
-    "26-Tahoe-Beach-Night.png",
-    "26-Tahoe-Dark-6K.png"
-  ]
-
-  const isDarkMode = theme === "dark" || (theme === "system" && systemTheme === "dark")
+  const isDarkMode =
+    theme === "dark" || (theme === "system" && systemTheme === "dark")
 
   const randomBackground = React.useMemo(() => {
     const backgroundsToUse = isDarkMode ? darkBackgrounds : lightBackgrounds
@@ -52,11 +53,11 @@ export function ComponentPreviewTabs({
         <div
           data-align={align}
           className={cn(
-            "preview flex w-full justify-center data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start bg-cover bg-center bg-no-repeat",
+            "preview flex w-full justify-center bg-cover bg-center bg-no-repeat data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
             chromeLessOnMobile ? "sm:p-10" : "h-[450px] p-10"
           )}
           style={{
-            backgroundImage: `url(/backgrounds/${randomBackground})`
+            backgroundImage: `url(/backgrounds/${randomBackground})`,
           }}
         >
           {component}

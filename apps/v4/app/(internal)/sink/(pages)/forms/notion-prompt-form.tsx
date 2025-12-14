@@ -1,5 +1,6 @@
 "use client"
 
+import { useMemo, useState } from "react"
 import {
   IconApps,
   IconArrowUp,
@@ -14,7 +15,6 @@ import {
   IconWorld,
   IconX,
 } from "@tabler/icons-react"
-import { useMemo, useState } from "react"
 
 import {
   Avatar,

@@ -4017,6 +4017,7 @@ export const Index: Record<string, Record<string, any>> = {
     },
     "alert-dialog-advanced-demo": {
       name: "alert-dialog-advanced-demo",
+      title: "undefined",
       description: "",
       type: "registry:example",
       registryDependencies: ["alert-dialog","button"],

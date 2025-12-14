@@ -2,7 +2,6 @@
 
 import * as React from "react"
 
-import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 import {
   Avatar,
   AvatarFallback,
@@ -26,6 +25,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
+import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 
 export function DropdownMenuDemo() {
   return (
